@@ -27,6 +27,7 @@ permalink: pretty
 paginate: 10
 exclude:
   [
+    “ruby”,
     "less",
     "node_modules",
     "Gruntfile.js",
@@ -100,5 +101,4 @@ friends:
     { title: "DHong Say", href: "http://dhong.co" },
     { title: "尹峰以为", href: "http://ingf.github.io/" },
   ]
-
-exclude: [ruby]
+  
