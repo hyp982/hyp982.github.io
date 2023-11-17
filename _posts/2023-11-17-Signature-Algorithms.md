@@ -21,7 +21,7 @@ tags:
 
 - 计算 $Y_A = \alpha^{X_A}\bmod q$。
 
-- 私钥 $\left{X_A\right}$，公钥 $\{Y_A\}$。
+- 私钥 $\left{ X_A \right} $，公钥 $\{Y_A\}$。
 
 ### 1.3 Sign 过程
 
