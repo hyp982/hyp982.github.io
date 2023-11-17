@@ -153,10 +153,10 @@ layout: default
     (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
         var d = document, s = d.createElement('script');
         
-        s.src = '//zllwhu-github-io.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+        s.src = '//lucwhu.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
         
         s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
 <!-- disqus 公共JS代码 end -->
