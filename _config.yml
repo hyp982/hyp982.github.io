@@ -59,7 +59,17 @@ kramdown:
       start_line: 1
 
 # Disqus settings
-disqus_username: lucwhu-github-io
+disqus_username: false
+
+# Gitalk
+gitalk:
+  enable: true
+  clientID: a8e642bcdc685061d907
+  clientSecret: d62f9a52dc4842ce5a64e27d8f2fec0b10cab5fe
+  repo: zllwhu.github.io
+  owner: zllwhu
+  admin: zllwhu
+  distractionFreeMode: true
 
 # Netease settings
 netease_comment: false
