@@ -64,7 +64,7 @@ disqus_username: zllwhu
 # Netease settings
 netease_comment: false
 
-Analytics settings
+# Analytics settings
 Baidu Analytics
 ba_track_id: ef64a30cbabec117e24f1718c85fcc2f
 
@@ -93,6 +93,7 @@ friends:
   [
     { title: "Sayaka", href: "https://sayaka-4987.github.io" },
     { title: "ChrisLee", href: "https://ipchrislee.github.io" },
+    { title: "ZX", href: "https://zxxx.cf" },
   ]
 
 exclude: [ruby]
