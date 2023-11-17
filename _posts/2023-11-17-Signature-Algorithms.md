@@ -4,6 +4,7 @@ title:        "密码学学习--签名算法"
 author:       "Luc"
 header-style: text
 catalog:      true
+mathjax:      true
 tags:
     - 密码学
 ---
