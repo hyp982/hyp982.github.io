@@ -21,7 +21,7 @@ tags:
 
 - 计算 $Y_A = \alpha^{X_A}\bmod q$。
 
-- 私钥 $\left{ X_A \right} $，公钥 $\{Y_A\}$。
+- 私钥 $\\{X_A\\} $，公钥 $\\{Y_A\\}$。
 
 ### 1.3 Sign 过程
 
@@ -57,7 +57,7 @@ tags:
 
 - 计算 $v = \alpha^{-s}\bmod p$。
 
-- 私钥 $\{s\}$，公钥$\{v\}$。
+- 私钥 $\\{s\\}$，公钥$\\{v\\}$。
 
 ### 2.3 Sign 过程
 
@@ -65,7 +65,7 @@ tags:
 
 - 计算 $x = \alpha^r\bmod p$。
 
-- 计算 $e = H(M||x)$。
+- 计算 $e = H(M\\|x)$。
 
 - 计算 $y = (r + se)\bmod q$。
 
@@ -75,7 +75,7 @@ tags:
 
 - 计算 $x' = (\alpha^{y'}v^{e'})\bmod p$。
 
-- 验证 $e' \overset{\text{?}}= H(M||x')$。
+- 验证 $e' \overset{\text{?}}= H(M\\|x')$。
 
 ## 3 DSA 签名
 
@@ -95,7 +95,7 @@ tags:
 
 - 计算 $y = g^x\bmod p$。
 
-- 私钥 $\{x\}$，公钥 $\{y\}$。
+- 私钥 $\\{x\\}$，公钥 $\\{y\\}$。
 
 ### 3.3 Sign 过程
 
@@ -137,7 +137,7 @@ tags:
 
 - 计算 $Q = dG$。
 
-- 私钥 $\{d\}$，公钥 $\{Q\}$。
+- 私钥 $\\{d\\}$，公钥 $\\{Q\\}$。
 
 ### 4.3 Sign 过程
 
@@ -183,7 +183,7 @@ tags:
 
 - 计算 $d = e^{-1}\bmod \phi(n)$。
 
-- 私钥 $\{p, q, d\}$，公钥 $\{n, e\}$。
+- 私钥 $\\{p, q, d\\}$，公钥 $\\{n, e\\}$。
 
 ### 5.2 Sign 过程
 
@@ -213,13 +213,13 @@ tags:
 
 - 计算 $P_A = [d_A]G = (x_A, y_A)$。
 
-- 私钥 $\{d_A\}$，公钥 $\{P_A\}$。
+- 私钥 $\\{d_A\\}$，公钥 $\\{P_A\\}$。
 
 ### 6.3 Sign 过程
 
-- 计算 $Z_A = H(ENTL_A\|ID_A\|a\|b\|x_G\|y_G\|x_A\|y_A)$。
+- 计算 $Z_A = H(ENTL_A\\|ID_A\\|a\\|b\\|x_G\\|y_G\\|x_A\\|y_A)$。
 
-- 计算 $\overline{M} = Z_A\|M$。
+- 计算 $\overline{M} = Z_A\\|M$。
 
 - 计算 $e = H(\overline{M})$。
 
@@ -237,7 +237,7 @@ tags:
 
 - 检验 $r'$ 和 $s'$ 是否是 $[1, n - 1]$ 中的整数。
 
-- 计算 $\overline{M}' = Z_A\|M'$。
+- 计算 $\overline{M}' = Z_A\\|M'$。
 
 - 计算 $e' = H(\overline{M}')$。
 
@@ -277,7 +277,7 @@ tags:
 
 ### 7.1 公共参数
 
-- Gap co-Diffie-Human group pair $(G_1, G_2)$，$|G_1| = |G_2| = p$，co-CDH 计算困难，co-DDH 计算简单。
+- Gap co-Diffie-Human group pair $(G_1, G_2)$，$\|G_1\| = \|G_2\| = p$，co-CDH 计算困难，co-DDH 计算简单。
 
 ### 7.2 Gen 过程
 
@@ -285,7 +285,7 @@ tags:
 
 - 计算 $v = g_2^x\in G_2$。
 
-- 私钥 $\{x\}$，公钥 $\{v\}$。
+- 私钥 $\\{x\\}$，公钥 $\\{v\\}$。
 
 ### 7.3 Sign 过程
 
