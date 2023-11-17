@@ -3,10 +3,10 @@ title: Lucas' Blog
 SEOTitle: Lucas' Blog
 header-img: img/home-bg-new.jpg
 email: 2023202210120@whu.edu.cn
-description: "这里是 @Lucas赵路路 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员"
-keyword: "黄玄, Hux黄玄, Hux, 鬼栈, huxpro, @huxpro, 黄玄的博客, Hux Blog, 博客, 个人网站, 互联网, Web, JavaScript, React, React Native, 前端, 设计"
-url: "https://huangxuan.me" # your host, for absolute URL
-baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
+description: "这里是 @Lucas赵路路 的个人博客，与你一起发现更大的世界 | 过倒悬山，剑气浩然"
+keyword: "赵路路, Lucas赵路路, zllwhu, @zllwhu, 博客, Cryptography, Blockchain"
+# url: "https://huangxuan.me"
+# baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
 future: true
@@ -36,7 +36,7 @@ exclude:
   ]
 anchorjs: true # if you want to customize anchor. check out line:181 of `post.html`
 # If you have timezone issue (e.g. #68) in China, uncomment to use this:
-#timezone: CN
+timezone: CN
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
@@ -69,8 +69,8 @@ netease_comment: false
 # ba_track_id: [your track id]
 
 # Google Analytics
-ga_track_id: "UA-49627206-1" # Format: UA-xxxxxx-xx
-ga_domain: huangxuan.me
+# ga_track_id: "UA-49627206-1" # Format: UA-xxxxxx-xx
+# ga_domain: huangxuan.me
 
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.
@@ -91,14 +91,8 @@ page-mathjax: false
 # Friends
 friends:
   [
-    { title: "乱序（Midare）", href: "http://mida.re/" },
-    { title: "Ebn Zhang", href: "https://ebnbin.dev/" },
-    { title: "Kun Qian", href: "http://kunq.me" },
-    { title: "Sherry Woo", href: "https://sherrywoo.me/" },
-    { title: "SmdCn", href: "http://blog.smdcn.net" },
-    { title: "JiyinYiyong", href: "http://tiye.me/" },
-    { title: "DHong Say", href: "http://dhong.co" },
-    { title: "尹峰以为", href: "http://ingf.github.io/" },
+    { title: "Sayaka", href: "https://sayaka-4987.github.io" },
+    { title: "ChrisLee", href: "https://ipchrislee.github.io" },
   ]
 
 exclude: [ruby]
