@@ -9,21 +9,21 @@ tags:
     - 密码学
 ---
 
-# 1 Elgamal 签名
+## 1 Elgamal 签名
 
-## 1.1 公共参数
+### 1.1 公共参数
 
 - $\alpha$ 是 $q$ 的原根。
 
-## 1.2 Gen 过程
+### 1.2 Gen 过程
 
 - 随机选择 $X_A \in \mathbb{Z}$， $1 < X_A < q - 1$。
 
 - 计算 $Y_A = \alpha^{X_A}\bmod q$。
 
-- 私钥 $\{X_A\}$，公钥 $\{Y_A\}$。
+- 私钥 $\left{X_A\right}$，公钥 $\{Y_A\}$。
 
-## 1.3 Sign 过程
+### 1.3 Sign 过程
 
 - $m = H(M)$， $0 \leq m \leq q-1$。
 
@@ -35,23 +35,23 @@ tags:
 
 - 输出签名 $(S_1, S_2)$。
 
-## 1.4 Vrfy 过程
+### 1.4 Vrfy 过程
 
 - 计算 $V_1 = \alpha^m\bmod q$。
 
 - 计算 $V_2 = [(Y_A)^{S'_1}(S'_2)^{S'_1}]\bmod q$。
 
-- 验证 $V_1 == V_2$。
+- 验证 $V_1 \overset{\text{?}}= V_2$。
 
-# 2 Schnorr 签名
+## 2 Schnorr 签名
 
-## 2.1 公共参数
+### 2.1 公共参数
 
 - 选择素数 $p$ 和 $q$ ， $p - 1 = 0\bmod q$。
 
 - 选择 $\alpha \in \mathbb{Z}$， $\alpha^q = 1\bmod p$。
 
-## 2.2 Gen 过程
+### 2.2 Gen 过程
 
 - 随机选择 $s \in \mathbb{Z}$，$0 < s < q$。
 
@@ -59,7 +59,7 @@ tags:
 
 - 私钥 $\{s\}$，公钥$\{v\}$。
 
-## 2.3 Sign 过程
+### 2.3 Sign 过程
 
 - 随机选择 $r \in \mathbb{Z}$，$0 < r < q$。
 
@@ -71,15 +71,15 @@ tags:
 
 - 输出签名 $(e, y)$。
 
-## 2.4 Vrfy 过程
+### 2.4 Vrfy 过程
 
 - 计算 $x' = (\alpha^{y'}v^{e'})\bmod p$。
 
-- 验证 $e' == H(M||x')$。
+- 验证 $e' \overset{\text{?}}= H(M||x')$。
 
-# 3 DSA 签名
+## 3 DSA 签名
 
-## 3.1 公共参数
+### 3.1 公共参数
 
 - 选择素数 $p$，$2^{L-1} < p < 2^L$，$512\leq L\leq 1024$，$L = 0\bmod 64$。
 
@@ -89,7 +89,7 @@ tags:
 
 - 计算 $g = [h(p - 1)/q]\bmod p$。
 
-## 3.2 Gen 过程
+### 3.2 Gen 过程
 
 - 随机选择 $x\in \mathbb{Z}$，$0 < x < q$。
 
@@ -97,7 +97,7 @@ tags:
 
 - 私钥 $\{x\}$，公钥 $\{y\}$。
 
-## 3.3 Sign 过程
+### 3.3 Sign 过程
 
 - 随机选择 $k \in \mathbb{Z}$，$0 < k < q$。
 
@@ -107,7 +107,7 @@ tags:
 
 - 输出签名 $(r, s)$。
 
-## 3.4 Vrfy 过程
+### 3.4 Vrfy 过程
 
 - 计算 $w = (s')^{-1}\bmod q$。
 
@@ -117,11 +117,11 @@ tags:
 
 - 计算 $v = [(g^{u_1}y^{u_2})\bmod p]\bmod q$。
 
-- 验证 $v == r'$。
+- 验证 $v \overset{\text{?}}= r'$。
 
-# 4 ECDSA 签名
+## 4 ECDSA 签名
 
-## 4.1 公共参数
+### 4.1 公共参数
 
 - 选择素数 $q$。
 
@@ -131,7 +131,7 @@ tags:
 
 - 基点 $G$ 的阶为 $n$。
 
-## 4.2 Gen 过程
+### 4.2 Gen 过程
 
 - 随机选择 $d\in \mathbb{Z}$，$1\leq d\leq n - 1$。
 
@@ -139,7 +139,7 @@ tags:
 
 - 私钥 $\{d\}$，公钥 $\{Q\}$。
 
-## 4.3 Sign 过程
+### 4.3 Sign 过程
 
 - 随机选择 $k\in \mathbb{Z}$，$1\leq k\leq n - 1$。
 
@@ -151,7 +151,7 @@ tags:
 
 - 输出签名 $(r, s)$。
 
-## 4.4 Vrfy 过程
+### 4.4 Vrfy 过程
 
 - 检验 $r'$ 和 $s'$ 是否是 $[1, n - 1]$ 中的整数。
 
@@ -167,11 +167,11 @@ tags:
 
 - 计算 $v = x_1\bmod n$。
 
-- 验证 $v == r'$。
+- 验证 $v \overset{\text{?}}= r'$。
 
-# 5 RSA 签名
+## 5 RSA 签名
 
-## 5.1 Gen 过程
+### 5.1 Gen 过程
 
 - 选择两个 $n$ 比特的素数 $p$ 和 $q$。
 
@@ -185,21 +185,21 @@ tags:
 
 - 私钥 $\{p, q, d\}$，公钥 $\{n, e\}$。
 
-## 5.2 Sign 过程
+### 5.2 Sign 过程
 
 - 计算 $\sigma = m^d\bmod n$。
 
 - 输出签名 $\sigma$。
 
-## 5.3 Vrfy 过程
+### 5.3 Vrfy 过程
 
 - 计算 $m'' = \sigma'^e\bmod n$。
 
-- 验证 $m' == m''$。
+- 验证 $m' \overset{\text{?}}= m''$。
 
-# 6 SM2 签名
+## 6 SM2 签名
 
-## 6.1 公共参数
+### 6.1 公共参数
 
 - 椭圆曲线 $E(F_q)$ 的规模 $q$ 和两个元素 $a,b\in F_q$。
 
@@ -207,7 +207,7 @@ tags:
 
 - 基点 $G$ 的阶。
 
-## 6.2 Gen 过程
+### 6.2 Gen 过程
 
 - 随机选择 $d_A\in \mathbb{Z}$，$1\leq d_A\leq n - 1$。
 
@@ -215,7 +215,7 @@ tags:
 
 - 私钥 $\{d_A\}$，公钥 $\{P_A\}$。
 
-## 6.3 Sign 过程
+### 6.3 Sign 过程
 
 - 计算 $Z_A = H(ENTL_A\|ID_A\|a\|b\|x_G\|y_G\|x_A\|y_A)$。
 
@@ -233,7 +233,7 @@ tags:
 
 - 输出签名 $(r, s)$。
 
-## 6.4 Vrfy 过程
+### 6.4 Vrfy 过程
 
 - 检验 $r'$ 和 $s'$ 是否是 $[1, n - 1]$ 中的整数。
 
@@ -247,11 +247,11 @@ tags:
 
 - 计算 $R = (e' + x'_1)\bmod n$。
 
-- 验证 $R == r'$。
+- 验证 $R \overset{\text{?}}= r'$。
 
-# 7 BLS 签名
+## 7 BLS 签名
 
-## 7.0 预备知识
+### 7.0 预备知识
 
 - 双线性映射：对于阶数均为素数 $p$ 的加性群 $G_1$ 和 $G_2$，乘性群 $G_T$ ，$G_1$ 的生成元为 $P$，$G_2$ 的生成元为 $Q$。双线性映射 $e:G_1\times G_2\rightarrow G_T$ 满足以下性质：
   
@@ -275,11 +275,11 @@ tags:
 
 - Decisional co-Diffie-Hellman, co-DDH：对于 $(G_1, G_2)$，给定 $g_2, g_2^a\in G_2$ 和 $h, h^b\in G_1$，判断 $a\overset{\text{?}}= b$。如果 $a = b$，则称 $(g_2, g_2^a, h, h^a)$ 是 co-DDH 元组。
 
-## 7.1 公共参数
+### 7.1 公共参数
 
 - Gap co-Diffie-Human group pair $(G_1, G_2)$，$|G_1| = |G_2| = p$，co-CDH 计算困难，co-DDH 计算简单。
 
-## 7.2 Gen 过程
+### 7.2 Gen 过程
 
 - 随机选择 $x\in \mathbb{Z}_p$。
 
@@ -287,7 +287,7 @@ tags:
 
 - 私钥 $\{x\}$，公钥 $\{v\}$。
 
-## 7.3 Sign 过程
+### 7.3 Sign 过程
 
 - 计算 $h = H(M)\in G_1$。
 
@@ -295,6 +295,6 @@ tags:
 
 - 输出签名 $\sigma$。
 
-## 7.4 Vrfy 过程
+### 7.4 Vrfy 过程
 
 - 验证 $(g_2, v, h, \sigma)$ 是否为 co-DDH 元组。
