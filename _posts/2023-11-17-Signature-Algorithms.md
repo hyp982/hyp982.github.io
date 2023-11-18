@@ -39,7 +39,7 @@ tags:
 
 - 计算 $V_1 = \alpha^m\bmod q$。
 
-- 计算 $V_2 = [(Y_A)^{S'_1}(S'_2)^{S'_1}]\bmod q$。
+- 计算 $V_2 = [(Y_A)^{S'_1}(S'_1)^{S'_2}]\bmod q$。
 
 - 验证 $V_1 \overset{\text{?}}= V_2$。
 
