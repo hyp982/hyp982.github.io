@@ -3,6 +3,7 @@ layout:       post
 title:        "密码学中的可证明安全性--基本工具和概念"
 author:       "Luc"
 header-style: text
+hidden:       true
 catalog:      true
 mathjax:      true
 tags:
