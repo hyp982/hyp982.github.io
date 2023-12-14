@@ -26,11 +26,17 @@ A digital signature scheme satisfies the following two properties.
 
 > **Correctness:** Given any $ (pk, sk, m, \sigma_m) $, if $ \sigma_m $ is a valid signature of $ m $ signed with $ sk $, the verification algorithm on $ (m, \sigma_m, pk) $ will return "accept".
 
-> **Security:** Without the secret key $sk$, it is hard for any probabilistic polynomial-time (PPT)
+> **Security:** Without the secret key $sk$, it is hard for any probabilistic polynomial-time (PPT) adversary to forge a valid signature $ \sigma_m $ on a new message $ m $ that can pass the signature verification.
 
-## 7 Scheme-6
+## 2 EU-CMA
 
-### 7.1 Description
+The security model of existential unforgeability against chosen-message attacks (EU-CMA) can be described as follows.
+
+> **Setup:** Let $ SP $ be the system parameters. The 
+
+## 8 Scheme-6
+
+### 8.1 Description
 
 Let $ (\mathbb{G}, \mathbb{G}_T, g, e, p) $ be the pairing group and $ H: \{ 0, 1 \}^* \rightarrow \mathbb{Z}_p $ be the cryptographic hash function that will be shared by all users.
 
@@ -43,4 +49,4 @@ Let $ (\mathbb{G}, \mathbb{G}_T, g, e, p) $ be the pairing group and $ H: \{ 0, 
 
 > **Verify:** The verification algorithm takes as input a message-signature pair $ (m, \sigma_m) $ and the public key $ pk $. It accepts the signature if $$ e(\sigma_1, g) = e(g_1, g_2)e(g^{H(m), \sigma_2}). $$
 
-### 7.2 Attack Method
+### 8.2 Attack Method
