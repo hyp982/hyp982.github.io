@@ -38,7 +38,7 @@ The security model of existential unforgeability against chosen-message attacks 
 
 ### 8.1 Description
 
-Let $ (\mathbb{G}, \mathbb{G}_T, g, e, p) $ be the pairing group and $ H: { 0, 1 }^* \rightarrow \mathbb{Z}_p $ be the cryptographic hash function that will be shared by all users.
+Let $ (\mathbb{G}, \mathbb{G}_T, g, e, p) $ be the pairing group and $ H: \\{ 0, 1 \\}^* \rightarrow \mathbb{Z}_p $ be the cryptographic hash function that will be shared by all users.
 
 > **KeyGen:** The key generation algorithm chooses random numbers $ \alpha, \beta \in \mathbb{Z}_p $, computes $ g_1 = g^{\alpha}, g_2 = g^{\beta} $, and returns a public/secret key pair $ (pk, sk) $ as follows:
 $$ pk = (g_1, g_2), sk = (\alpha, \beta). $$
