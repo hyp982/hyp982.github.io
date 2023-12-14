@@ -32,7 +32,19 @@ A digital signature scheme satisfies the following two properties.
 
 The security model of existential unforgeability against chosen-message attacks (EU-CMA) can be described as follows.
 
-> **Setup:** Let $ SP $ be the system parameters. The 
+> **Setup:** Let $ SP $ be the system parameters. The challenger runs the key generation algorithm to generate a key pair $ (pk, sk) $ and sends $ pk $ to the adversary. The challenger keeps $ sk $ to respond to signature queries from the adversary.
+
+> **Query:** The adversary makes signature queries on messages that are adaptively chosen by the adversary itself. For a signature query on the message $ m_i $, the challenger runs the signing algorithm to compute $ \sigma_{m_i} $ and then sends it to the adversary.
+
+> **Forgery:** The adversary returns a forged signature $ \sigma_{m^*} $ on some $ m^* $ and wins the game if
+> - $ \sigma_{m^*} $ is a valid signature of the message $ m^* $.
+> - A signature of $ m^* $ has not been queried inn the query phase.
+
+The advantage $ \epsilon $ of winning the game is the probability of returning a valid forged signature.
+
+**Definition 1 (EU-CMA):** A signature scheme is $ (t, q_s, \epsilon) $-secure in the EU-CMA security model if there exists no adversary who can win the above game in time $ t $ with advantage $ \epsilon $ after it has made $ q_s $ signature queries.
+
+**Definition 2 (SU-CMA):** A signature scheme is $ (t, q_s, \epsilon) $-secure in the security model of strong unforgeability against chosen-message attacks (SU-CMA) if there exists no adversary who can win the above game in time $ t $ with advantage $ \epsilon $ after it has made $ q_s $ signature queries, where the forged signature can be on any message as long as it is different from all queried signatures.
 
 ## 8 Scheme-6
 
@@ -50,3 +62,17 @@ Let $ (\mathbb{G}, \mathbb{G}_T, g, e, p) $ be the pairing group and $ H: \\{ 0,
 > **Verify:** The verification algorithm takes as input a message-signature pair $ (m, \sigma_m) $ and the public key $ pk $. It accepts the signature if <br><center> $ e(\sigma_1, g) = e(g_1, g_2)e(g^{H(m), \sigma_2}). $
 
 ### 8.2 Attack Method
+The adversary makes a signature query on message $ m_1 $ adaptively chosen by the adversary itself. For the signature query on the message $ m_1 $, the challenger runs the signing algorithm to compute $ \sigma_{m_1} = (\sigma_{m_1}^{(1)} = g^{\alpha \beta + H(m_1) \cdot r_1}, \sigma_{m_1}^{(2)} = g^{r_1}) $ and then sends it to the adversary.
+
+Because the equation $ \sigma_{m_1}^{(1)} = g^{\alpha \beta + H(m_1) \cdot r_1} = g^{\alpha \beta} \cdot (\sigma_{m_1}^{(2)})^{H(m_1)} $ holds, the adversary is able to compute $ g^{\alpha \beta} = \dfrac{\sigma_{m_1}^{(1)}}{(\sigma_{m_1}^{(2)})^{H(m_1)}} $.
+
+Then the adversary forges the signature of message $ m^* $ by the following steps.
+- Choose a random $ r^* \in \mathbb{Z}_p $ and compute $ \sigma_2^* = g^{r^*} $.
+- Compute $ \sigma_1^* = g^{\alpha \beta + H(m^*) \cdot r^*} = g^{\alpha \beta} \cdot (\sigma_2^*)^{H(m^*)} $.
+- Return the forged signature $ \sigma_{m^*} = (\sigma_1^*, \sigma_2^*) $.
+
+### 8.3 Remediation Scenario
+
+The $ \mathrm{BB}^{RO} $ digital signature scheme can be described as follows.
+
+> **SysGen:** The system 
