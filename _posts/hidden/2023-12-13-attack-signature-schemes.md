@@ -68,12 +68,9 @@ Because the equation $ \sigma_{m_1}^{(1)} = g^{\alpha \beta + H(m_1) \cdot r_1} 
 
 Then the adversary forges the signature of message $ m^* $ by the following steps.
 - Choose a random $ r^* \in \mathbb{Z}_p $ and compute $ \sigma_2^* = g^{r^*} $.
-- Compute $ \sigma_1^* = 
-\begin{align}
-g^{\alpha \beta + H(m^*) \cdot r^*}\\\\
-= g^{\alpha \beta} \cdot (\sigma_2^*)^{H(m^*)}
-\end{align} $.
-- Return the forged signature $ \sigma_{m^*} = (\sigma_1^*, \sigma_2^*) $.
+- Compute $ \sigma_1^* = g^{\alpha \beta + H(m^*) \cdot r^*} $.
+<!-- - Compute $ \sigma_1^* = g^{\alpha \beta + H(m^*) \cdot r^*} = g^{\alpha \beta} \cdot (\sigma_2^*)^{H(m^*)} $.
+- Return the forged signature $ \sigma_{m^*} = (\sigma_1^*, \sigma_2^*) $. -->
 
 ### 8.3 Remediation Scenario
 
