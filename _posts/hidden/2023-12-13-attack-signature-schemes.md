@@ -18,9 +18,9 @@ A digital signature scheme consists of the following four algorithms.
 
 > **KeyGen:** The key generation algorithm takes as input the system parameters $ SP $. It returns a public/secret key pair $ (pk, sk) $.
 
->**Sign:** The signing algorithm takes as input a message $ m $ from its message space, the secret key $ sk $, and the system parameters $ SP $. It returns a signature of $ m $ denoted by $ \sigma_m $.
+> **Sign:** The signing algorithm takes as input a message $ m $ from its message space, the secret key $ sk $, and the system parameters $ SP $. It returns a signature of $ m $ denoted by $ \sigma_m $.
 
->**Verify:** The verification algorithm takes as input a message-signature pair $ (m, \sigma_m) $, the public key $ pk $, and the system parameters $ SP $. It returns "accept" if $ \sigma_m $ is a valid signature of $ m $ signed with $ sk $; otherwise, it returns "reject".
+> **Verify:** The verification algorithm takes as input a message-signature pair $ (m, \sigma_m) $, the public key $ pk $, and the system parameters $ SP $. It returns "accept" if $ \sigma_m $ is a valid signature of $ m $ signed with $ sk $; otherwise, it returns "reject".
 
 A digital signature scheme satisfies the following two properties.
 
@@ -40,15 +40,13 @@ The security model of existential unforgeability against chosen-message attacks 
 
 Let $ (\mathbb{G}, \mathbb{G}_T, g, e, p) $ be the pairing group and $ H: \\{ 0, 1 \\}^* \rightarrow \mathbb{Z}_p $ be the cryptographic hash function that will be shared by all users.
 
-> **KeyGen:** The key generation algorithm chooses random numbers $ \alpha, \beta \in \mathbb{Z}_p $, computes $ g_1 = g^{\alpha}, g_2 = g^{\beta} $, and returns a public/secret key pair $ (pk, sk) $ as follows:
-$$ pk = (g_1, g_2), sk = (\alpha, \beta). $$
+> **KeyGen:** The key generation algorithm chooses random numbers $ \alpha, \beta \in \mathbb{Z}_p $, computes $ g_1 = g^{\alpha}, g_2 = g^{\beta} $, and returns a public/secret key pair $ (pk, sk) $ as follows: <br><center> $ pk = (g_1, g_2), sk = (\alpha, \beta). $<\center>
 
 > **Sign:** The signing algorithm takes as input a message $ m \in \{ 0, 1\}^* $ and the secret key $ sk $.
 > - Choose a random $ r \in \mathbb{Z}_p $ and compute $ \sigma_2 = g^r $.
 > - Compute $ \sigma_1 = g^{\alpha \beta + H(m) \cdot r} $.
 > - Return the signature $ \sigma_m = (\sigma_1, \sigma_2) $.
 
-> **Verify:** The verification algorithm takes as input a message-signature pair $ (m, \sigma_m) $ and the public key $ pk $. It accepts the signature if
-$$ e(\sigma_1, g) = e(g_1, g_2)e(g^{H(m), \sigma_2}). $$
+> **Verify:** The verification algorithm takes as input a message-signature pair $ (m, \sigma_m) $ and the public key $ pk $. It accepts the signature if $$ e(\sigma_1, g) = e(g_1, g_2)e(g^{H(m), \sigma_2}). $$
 
 ### 8.2 Attack Method
