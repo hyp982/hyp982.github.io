@@ -10,6 +10,8 @@ tags:
     - 密码学
 ---
 
+> 本文内容来源于郭福春老师的《Introduction to Security Reduction》和《卧村学报》第52期《Practice Makes Perfect: Attack Signature Schemes》。
+
 ## 1 Digital Signature
 
 A digital signature scheme consists of the following four algorithms.
