@@ -66,7 +66,7 @@ The adversary makes a signature query on message $ m_1 $ adaptively chosen by th
 
 Because the equation $ \sigma_{m_1}^{(1)} = g^{\alpha \beta + H(m_1) \cdot r_1} = g^{\alpha \beta} \cdot (\sigma_{m_1}^{(2)})^{H(m_1)} $ holds, the adversary is able to compute $ g^{\alpha \beta} = \dfrac{\sigma_{m_1}^{(1)}}{(\sigma_{m_1}^{(2)})^{H(m_1)}} $.
 
-Then the adversary forges the signature of message $ m^* $ by the following steps.
+Then the adversary forges the signature on message $ m^* $ by the following steps.
 - Choose a random $ r^* \in \mathbb{Z}_p $ and compute $ \sigma_2^* = g^{r^*} $.
 - Compute $ \sigma_1^ * = g^{\alpha \beta + H(m^ *) \cdot r^ *} = g^{\alpha \beta} \cdot (\sigma_2^ *)^{H(m^ *)}$.
 - Return the forged signature $ \sigma_{m^ *} = (\sigma_1^ *, \sigma_2^ *) $.
@@ -75,4 +75,12 @@ Then the adversary forges the signature of message $ m^* $ by the following step
 
 The $ \mathrm{BB}^{RO} $ digital signature scheme can be described as follows.
 
-> **SysGen:** The system 
+> **SysGen:** The system parameter generation algorithm takes as input a security parameter $ \lambda $. It chooses a pairing group $ \mathbb{PG} = (\mathbb{G}, \mathbb{G}_T, g, p, e) $, selects a cryptographic hash function $ H: \\{ 0, 1 \\}^* \rightarrow \mathbb{G} $, and returns the system parameters $ SP = (\mathbb{PG}, H) $.
+
+> **KeyGen:** The key generation algorithm takes as input the system parameters $ SP $. It randomly chooses $ g_2 \in \mathbb{G}, \alpha \in \mathbb{Z}_p $, computes $ g_1 = g^{\alpha} $, and returns a public/secret key pair $ (pk, sk) $ as follows: <br><center> $ pk = (g_1, g_2), sk = \alpha $.
+
+> **Sign:** The signing algorithm takes as input a message $ m \in \\{ 0, 1 \\}^* $, the secret key $ sk $, and the system parameters $ SP $. It chooses a random number $ r \in \mathbb{Z}_p $ and returns the signature $ \sigma_m $ on $ m $ as <br><center> $ \sigma_m = (\sigma_1, \sigma_2) = (g_2^{\alpha}H(m)^r, g^r) $.
+
+> **Verify:** The verification algorithm takes as input a message-signature pair $ (m, \sigma_m) $, the public key $ pk $, and the system parameters $ SP $. Let $ \sigma_m = (\sigma_1, \sigma_2) $. It accepts the signature if <br><center> $ e(\sigma_1, g) = e(g_1, g_2)e(H(m), \sigma_2) $.
+
+Suppose the hash function $ H $ is a random oracle. If the CDH problem is hard, the $ \mathrm{BB}^{RO} $ signature is provably secure in the EU-CMA security model with reduction loss $ L = q_H $, where $ q_H $ is the number of hash queries to the random oracle.
