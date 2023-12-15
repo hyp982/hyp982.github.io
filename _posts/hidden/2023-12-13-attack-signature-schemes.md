@@ -36,9 +36,9 @@ The security model of existential unforgeability against chosen-message attacks 
 
 > **Query:** The adversary makes signature queries on messages that are adaptively chosen by the adversary itself. For a signature query on the message $ m_i $, the challenger runs the signing algorithm to compute $ \sigma_{m_i} $ and then sends it to the adversary.
 
-> **Forgery:** The adversary returns a forged signature $ \sigma_{m^*} $ on some $ m^* $ and wins the game if
-> - $ \sigma_{m^*} $ is a valid signature of the message $ m^* $.
-> - A signature of $ m^* $ has not been queried inn the query phase.
+> **Forgery:** The adversary returns a forged signature $ \sigma_{m^ *} $ on some $ m^ * $ and wins the game if
+> - $ \sigma_{m^ *} $ is a valid signature of the message $ m^ * $.
+> - A signature of $ m^ * $ has not been queried inn the query phase.
 
 The advantage $ \epsilon $ of winning the game is the probability of returning a valid forged signature.
 
