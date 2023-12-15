@@ -48,6 +48,14 @@ The advantage $ \epsilon $ of winning the game is the probability of returning a
 
 **Definition 2 (SU-CMA):** A signature scheme is $ (t, q_s, \epsilon) $-secure in the security model of strong unforgeability against chosen-message attacks (SU-CMA) if there exists no adversary who can win the above game in time $ t $ with advantage $ \epsilon $ after it has made $ q_s $ signature queries, where the forged signature can be on any message as long as it is different from all queried signatures.
 
+## 3 Scheme-1
+
+### 3.1 Description
+
+Let $ (\mathbb{G}, g, p) $ be the cyclic group and $ H: \\{ 0, 1 \\}^* \rightarrow \mathbb{Z}_p $ be the cryptographic hash function that will be shared by all users.
+
+> **KeyGen:** The key generation algorithm chooses a random number $ \alpha \in \mathbb{Z}_p $, computes $ g_1 = g^{\alpha} $, and returns a public/secret key pair $ (pk, sk) $ as follows: <br><center> $ pk = g_1, sk = \alpha $.
+
 ## 8 Scheme-6
 
 ### 8.1 Description
