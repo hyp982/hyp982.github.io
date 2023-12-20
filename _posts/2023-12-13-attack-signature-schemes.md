@@ -56,6 +56,10 @@ Let $ (\mathbb{G}, g, p) $ be the cyclic group and $ H: \\{ 0, 1 \\}^* \rightarr
 
 > **KeyGen:** The key generation algorithm chooses a random number $ \alpha \in \mathbb{Z}_p $, computes $ g_1 = g^{\alpha} $, and returns a public/secret key pair $ (pk, sk) $ as follows: <br><center> $ pk = g_1, sk = \alpha $.
 
+> **Sign:** The signing algorithm take as input a message $ m \in \\{ 0, 1 \\}^* $ and the secret key $ sk $. It computes the signature $ \sigma_m $ on $ m $ as <br><center> $ \sigma_m = \alpha + H(m) \; \bmod p $.
+
+> **Verify:** The
+
 ## 8 Scheme-6
 
 ### 8.1 Description
