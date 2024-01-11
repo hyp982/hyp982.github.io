@@ -82,3 +82,12 @@ jQuery(document).ready(function($) {
             });
     }
 });
+
+window.onscroll = function () { scrollFunction() };
+function scrollFunction() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        $(".back-to-top").addClass('visible');
+    } else {
+        $(".back-to-top").removeClass("visible")
+    }
+}
