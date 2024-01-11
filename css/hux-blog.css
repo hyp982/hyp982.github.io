@@ -108,7 +108,6 @@
 .side-catalog .catalog-body .h3_nav {
   margin-left: 6px;
   font-size: 13px;
-  font-weight: bold;
 }
 .side-catalog .catalog-body .h4_nav {
   margin-left: 12px;
@@ -186,7 +185,7 @@
     Multi-line snackbar height: 80 dp
     Text: Roboto Regular 14 sp
     Action button: Roboto Medium 14 sp, all-caps text
-    Default background fill: #323232 100%
+    Default background fill: #323232 100%  
   */
     left: 0px;
     right: 0px;
@@ -606,12 +605,13 @@ pre.highlight {
 .search-page .search-icon-close-container {
   position: absolute;
   z-index: 1;
-  padding: 16px;
+  padding: 20px;
+  padding-right: 32px;
   top: 0;
   right: 2px;
 }
 .search-page .search-icon-close-container i {
-  font-size: 20px;
+  font-size: 32px;
 }
 .search-page #search-input {
   font-family: "Fira Code", Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -799,13 +799,6 @@ samp {
 .post-container h5 + p,
 .post-container h6 + p {
   margin-top: 20px;
-}
-.post-container h2::before {
-  content: " ";
-  display: block;
-  border-bottom: 1px solid #ececec;
-  margin-top: 44px;
-  margin-bottom: 30px;
 }
 .post-container h4 {
   font-size: 22px;
