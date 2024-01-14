@@ -12,10 +12,15 @@ tags:
 ## 1 Elgamal 签名
 
 > **1. Hashed Elgamal Scheme**
+>
 > **SysGen:** The system parameter generation algorithm takes as input a security parameter $\lambda$. It chooses a cyclic group $(\mathbb{G},p,g)$, selects a cryptographic hash function $H:\\{0,1\\}^{*}\rightarrow \\{0,1\\}^{n}$, and returns the system parameters $SP=(\mathbb{G},p,g,H)$.
+>
 > **KeyGen:** The key generation algorithm takes as input the system parameters $SP$. It randomly chooses $\alpha\in \mathbb{Z}_{p}$, computes $g_1 = g^{\alpha}$, and returns a public/secret key pair $(pk, sk)$ as follows: <br><center> $ pk = g_1, sk = \alpha $.
+>
 > **Encrypt:** The encryption algorithm takes as input a message $m\in \\{0,1\\}^{n}$, the public key $pk$, and the system parameters $SP$. It chooses a random number $r\in \mathbb{Z}_{p}$ and returns the ciphertext $CT$ as: <br><center> $CT=(C_1,C_2)=(g^r,H(g_1^r)\oplus m)$.
+>
 > **Decrypt:** The decryption algorithm takes as input a ciphertext $CT$, the secret key $sk$, and the system parameter $SP$. Let $CT=(C_1, C_2)$. It decrypts the message by computing <br><center> $C_2\oplus H(C_1^{\alpha})=H(g_1^r)\oplus m\oplus H(g^{\alpha r})=m$.
+>
 > **Theorem:** Suppose the hash function $H$ is a random oracle. If the CDH problem is hard, the Hashed Elgamal encryption scheme is provably secure in the IND-CPA security model with reduction loss $L=q_H$, where $q_H$ is the number of hash queries to the random oracle.
 
 ### 1.1 公共参数
