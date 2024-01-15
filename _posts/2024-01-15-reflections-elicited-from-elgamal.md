@@ -2,7 +2,8 @@
 layout:       post
 title:        "从Elgamal算法引发的思考"
 author:       "Luc"
-header-img:   "/img/prefaces-in-posts/public-key-encryption.png"
+header-img:   "/img/prefaces-in-posts/public-key-encryption.jpg"
+header-mask:  0.3
 catalog:      true
 mathjax:      true
 tags:
