@@ -2,7 +2,7 @@
 layout:       post
 title:        "从Elgamal算法引发的思考"
 author:       "Luc"
-header-img:   /img/bg-2024-01-15-reflections-elicited-from-elgamal.jpg
+header-style: text
 catalog:      true
 mathjax:      true
 tags:
