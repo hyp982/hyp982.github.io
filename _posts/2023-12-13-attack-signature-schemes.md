@@ -59,7 +59,21 @@ Let $ (\mathbb{G}, g, p) $ be the cyclic group and $ H: \\{ 0, 1 \\}^* \rightarr
 
 > **Sign:** The signing algorithm take as input a message $ m \in \\{ 0, 1 \\}^* $ and the secret key $ sk $. It computes the signature $ \sigma_m $ on $ m $ as <br><center> $ \sigma_m = \alpha + H(m) \; \bmod p $.
 
-> **Verify:** The
+> **Verify:** The verification algorithm takes as input a message-signature pair $ (m, \sigma_m) $ and the public key $ pk $. It accepts the signature if <br><center> $ g^{\sigma_m} = g_1 \cdot g^{H(m)} $.
+
+### 3.2 Attack Method
+
+The adversary makes a signature query on message $ m_1 $ adaptively chosen by the adversary itself. For the signature query on the message $ m_1 $, the challenger runs the signing algorithm to compute $ \sigma_{m_1} = \alpha + H(m) $ and then sends it to the adversary.
+
+Because the adversary holds both $ \sigma_{m_1} $ and $ m_1 $, it can compute $H(m_1)$ even $ \alpha $ with equation $ \alpha = \sigma_{m_1} - H(M) $.
+
+Then the adversary forges the signature on message $ m^* $ by the following steps.
+- Compute $ H(m^ *) $.
+- Return the forged signature $ \sigma_{m^ *} = \alpha + H(m^ *) $.
+
+### 3.3 Remediation Scenario
+
+
 
 ## 8 Scheme-6
 
