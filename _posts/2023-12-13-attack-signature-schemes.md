@@ -57,7 +57,7 @@ Let $ (\mathbb{G}, g, p) $ be the cyclic group and $ H: \\{ 0, 1 \\}^* \rightarr
 
 > **KeyGen:** The key generation algorithm chooses a random number $ \alpha \in \mathbb{Z}_p $, computes $ g_1 = g^{\alpha} $, and returns a public/secret key pair $ (pk, sk) $ as follows: <br><center> $ pk = g_1, sk = \alpha $.
 
-> **Sign:** The signing algorithm take as input a message $ m \in \\{ 0, 1 \\}^* $ and the secret key $ sk $. It computes the signature $ \sigma_m $ on $ m $ as <br><center> $ \sigma_m = \alpha + H(m) \; \bmod p $.
+> **Sign:** The signing algorithm take as input a message $ m \in \\{ 0, 1 \\}^* $ and the secret key $ sk $. It computes the signature $ \sigma_m $ on $ m $ as <br><center> $ \sigma_m = \alpha + H(m) \bmod p $.
 
 > **Verify:** The verification algorithm takes as input a message-signature pair $ (m, \sigma_m) $ and the public key $ pk $. It accepts the signature if <br><center> $ g^{\sigma_m} = g_1 \cdot g^{H(m)} $.
 
@@ -73,7 +73,25 @@ Then the adversary forges the signature on message $ m^* $ by the following step
 
 ### 3.3 Remediation Scenario
 
+Let $ (\mathbb{G}, g, p) $ be the cyclic group and $ H: \\{ 0, 1 \\}^* \rightarrow \mathbb{Z}_p $ be the cryptographic hash function that will be shared by all users.
 
+> **KeyGen:** The key generation algorithm chooses a random number $ \alpha \in \mathbb{Z}_p $, computes $ g_1 = g^{\alpha} $, and returns a public/secret key pair $ (pk, sk) $ as follows: <br><center> $ pk = g_1, sk = \alpha $.
+
+> **Sign:** The signing algorithm take as input a message $ m \in \\{ 0, 1 \\}^* $ and the secret key $ sk $.
+> - Choose a random $ r \in \mathbb{Z}_p $ and compute $ \sigma_2 = g^r $.
+> - Compute $ \sigma_1 = \alpha \sigma_1 + H(m) \cdot r \bmod p$.
+> - Return the signature $ \sigma_m = (\sigma_1, \sigma_2) $.
+
+> **Verify:** The verification algorithm takes as input a message-signature pair $ (m, \sigma_m) $ and the public key $ pk $. It accepts the signature if <br><center> $ g^{\sigma_2} = g_1^{\sigma_1} \cdot \sigma_1^{H(m)} $.
+
+There are 18 variant scenarios for Elgamal signature scheme summarized by Harn in *Design of Generalized ElGamal Type Digital Signature Schemes Based on Discrete Logarithm*. The above scheme is the instance No.3. Besides, the Elgamal signature scheme is the instance No.4.
+
+Notations changed in the table below, where $ x $ is the user's private key, $ y $ is the user's public key, $ k $ is a random number, $ \alpha $ is an intrinsic element of modulo $ p $, $ m $ is the message to be signed, and $ r $ and $ s $ are the two components of the signature.
+
+| No. | Sign($ \bmod p - 1 $) | Verify($ \bmod p $)   |
+| --- | --------------------- | --------------------- |
+| 1   | $ mx = rk + s $       | $ y^m = r^r\alpha^s $ |
+| 2   | $ mx = sk + r $       | $ y^m = r^s\alpha^r $ |
 
 ## 8 Scheme-6
 
@@ -81,14 +99,14 @@ Then the adversary forges the signature on message $ m^* $ by the following step
 
 Let $ (\mathbb{G}, \mathbb{G}_T, g, e, p) $ be the pairing group and $ H: \\{ 0, 1 \\}^* \rightarrow \mathbb{Z}_p $ be the cryptographic hash function that will be shared by all users.
 
-> **KeyGen:** The key generation algorithm chooses random numbers $ \alpha, \beta \in \mathbb{Z}_p $, computes $ g_1 = g^{\alpha}, g_2 = g^{\beta} $, and returns a public/secret key pair $ (pk, sk) $ as follows: <br><center> $ pk = (g_1, g_2), sk = (\alpha, \beta). $
+> **KeyGen:** The key generation algorithm chooses random numbers $ \alpha, \beta \in \mathbb{Z}_p $, computes $ g_1 = g^{\alpha}, g_2 = g^{\beta} $, and returns a public/secret key pair $ (pk, sk) $ as follows: <br><center> $ pk = (g_1, g_2), sk = (\alpha, \beta) $.
 
 > **Sign:** The signing algorithm takes as input a message $ m \in \{ 0, 1\}^* $ and the secret key $ sk $.
 > - Choose a random $ r \in \mathbb{Z}_p $ and compute $ \sigma_2 = g^r $.
 > - Compute $ \sigma_1 = g^{\alpha \beta + H(m) \cdot r} $.
 > - Return the signature $ \sigma_m = (\sigma_1, \sigma_2) $.
 
-> **Verify:** The verification algorithm takes as input a message-signature pair $ (m, \sigma_m) $ and the public key $ pk $. It accepts the signature if <br><center> $ e(\sigma_1, g) = e(g_1, g_2)e(g^{H(m), \sigma_2}). $
+> **Verify:** The verification algorithm takes as input a message-signature pair $ (m, \sigma_m) $ and the public key $ pk $. It accepts the signature if <br><center> $ e(\sigma_1, g) = e(g_1, g_2)e(g^{H(m)}, \sigma_2) $.
 
 ### 8.2 Attack Method
 The adversary makes a signature query on message $ m_1 $ adaptively chosen by the adversary itself. For the signature query on the message $ m_1 $, the challenger runs the signing algorithm to compute $ \sigma_{m_1} = (\sigma_{m_1}^{(1)} = g^{\alpha \beta + H(m_1) \cdot r_1}, \sigma_{m_1}^{(2)} = g^{r_1}) $ and then sends it to the adversary.
