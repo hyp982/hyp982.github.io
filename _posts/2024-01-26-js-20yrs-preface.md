@@ -2,7 +2,7 @@
 layout:       post
 title:        "《心平气和》推荐语"
 author:       "小胡"
-header-style: text
+header-style: 文本
 catalog:      true
 tags:
     - Web
