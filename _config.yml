@@ -15,9 +15,7 @@ future: true
 RSS: false
 weibo_username: hyp982
 github_username: hyp982
-twitter_username: huxpro
-#facebook_username:  huxpro
-#linkedin_username:  firstname-lastname-idxxxx
+
 
 # Build settings
 # from 2024, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
