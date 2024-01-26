@@ -1,4 +1,4 @@
-[Hux Blog](https://huangxuan.me)
+[hyp982]([https://hyp982.github.io/])
 ================================
 
 > I never expect this becomes popular.
