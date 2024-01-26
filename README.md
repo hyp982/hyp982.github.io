@@ -20,7 +20,7 @@ Other Resources
 ---------------
 
 Ports
-- [**hyp982**][https://hyp982.github.io/blog]
+- [**hyp982**][(https://hyp982.github.io/)]
 
 License
 -------
@@ -28,5 +28,5 @@ License
 Apache License 2.0.
 Copyright (c) 2024-present hyp982
 
-hyp982 Blog is derived from [Clean Blog Jekyll Theme (MIT License)](https://hyp982.github.io/)
-Copyright (c) 2023-2024 Blackrock Digital LLC.
+hyp982 Blog is derived from (https://hyp982.github.io/)
+Copyright (c) 2023-2024 
