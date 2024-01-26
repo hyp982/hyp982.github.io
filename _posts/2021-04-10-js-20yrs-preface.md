@@ -1,7 +1,7 @@
 ---
 layout:       post
-title:        "《JavaScript 二十年》推荐语"
-author:       "Hux"
+title:        "《心平气和》推荐语"
+author:       "小胡"
 header-style: text
 catalog:      true
 tags:
