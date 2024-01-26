@@ -119,7 +119,8 @@ Let $ (\mathbb{G}, g, p) $ be the cyclic group and $ H: \\{ 0, 1 \\}^* \rightarr
 
 - **Sign:** The signing algorithm take as input a message $ m \in \\{ 0, 1 \\}^* $ and the secret key $ sk $.
   - Choose a random $ r\in \mathbb{Z}_p $ and compute $ \sigma_1 = g^r $.
-  - Compute $ \sigma_2 $
+  - Compute $ \sigma_2 = r + \alpha H(m)\bmod p $.
+  - Return the signature $ \sigma_m = (\sigma_1, \sigma_2) $.
 
 - **Verify:** The verification algorithm takes as input a message-signature pair $ (m, \sigma_m) $ and the public key $ pk $. It accepts the signature if <br><center> $ g^{\sigma_2} = sigma_1\cdot g_1^{H(m)} $.
 
