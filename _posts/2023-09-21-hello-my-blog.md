@@ -14,4 +14,4 @@ tags:
 
 ![](/img/in-posts/2023-09-21-hello-my-blog/hello-my-blog.jpg)
 
-![](https://github.com/zllwhu/AI_whu_2023/blob/main/midterm_exp/figs/GA_visualize.png)
+![](https://cdn.jsdelivr.net/gh/zllwhu/blogImage@main/GA_distance_curve.png)
