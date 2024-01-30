@@ -14,4 +14,4 @@ tags:
 
 ![](/img/in-posts/2023-09-21-hello-my-blog/hello-my-blog.jpg)
 
-![](https://cdn.jsdelivr.net/gh/zllwhu/blogImage@main/GA_distance_curve.png)
+<!-- ![](https://cdn.jsdelivr.net/gh/zllwhu/blogImage@main/GA_distance_curve.png) -->
