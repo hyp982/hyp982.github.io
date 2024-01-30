@@ -13,3 +13,5 @@ tags:
 接下来有时间就写一些技术总结和随想笔记，不断完善它。
 
 ![](/img/in-posts/2023-09-21-hello-my-blog/hello-my-blog.jpg)
+
+![](https://github.com/zllwhu/AI_whu_2023/blob/main/midterm_exp/figs/GA_visualize.png)
