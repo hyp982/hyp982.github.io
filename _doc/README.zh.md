@@ -1,6 +1,6 @@
-# Hux blog 模板
+# 心平气和模板
 
-### [我的博客在这里 &rarr;](http://huxpro.github.io)
+### [我的博客在这里 &rarr;](hyp982.github.io)
 
 
 ### 关于收到"Page Build Warning"的email
@@ -79,13 +79,13 @@ $ git clone git@github.com:Huxpro/huxblog-boilerplate.git
 
 ```
 # Site settings
-title: Hux Blog             # 你的博客网站标题
-SEOTitle: Hux Blog			# 在后面会详细谈到
-description: "Cool Blog"    # 随便说点，描述一下
+title: 心平气和             # 你的博客网站标题
+SEOTitle: 心平气和			# 在后面会详细谈到
+description: "心平气和 Blog"    # 随便说点，描述一下
 
 # SNS settings      
-github_username: huxpro     # 你的github账号
-weibo_username: huxpro      # 你的微博账号，底部链接会自动更新的。
+github_username: hyp982     # 你的github账号
+weibo_username: 心平气和      # 你的微博账号，底部链接会自动更新的。
 
 # Build settings
 # paginate: 10              # 一页你准备放几篇文章
@@ -102,11 +102,11 @@ yaml 头文件长这样:
 ```
 ---
 layout:     post
-title:      "Hello 2015"
+title:      "Hello 2024"
 subtitle:   "Hello World, Hello Blog"
-date:       2015-01-29 12:00:00
-author:     "Hux"
-header-img: "img/post-bg-2015.jpg"
+date:       2024-01-29 12:00:00
+author:     "心平气和"
+header-img: "img/home-bg.jpg"
 tags:
     - Life
 ---
