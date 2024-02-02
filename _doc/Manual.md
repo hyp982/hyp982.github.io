@@ -1,26 +1,6 @@
 心平气和 Blog User Manual
 ====================
 
-* Basics
-	* [Getting Started](#getting-started)
-	* [Development](#development)
-	* [Config](#configs)
-	* [Posts](#posts)
-* Components
-	* [SideBar](#sidebar)
-	* [Mini About Me](#mini-about-me)
-	* [Featured Tags](#featured-tags)
-	* [Friends](#friends)
-	* [Keynote Layout](#keynote-layout)
-* Misc
-	* [Comment](#comment)
-	* [Analytics](#analytics)
-	* [SEO Title](#seo-title)
-* [FAQ](#faq)
-* [Releases](#releases) 
-
-
-
 ```yml
 # Site settings
 title: 心平气和 Blog             # title of your website
